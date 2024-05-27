@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriales de Programación</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Estilos personalizados -->
+  <style>
+    body,
+    footer, .card, 
+    .jumbotron {
+      background-color: #282C34;
+      color: white;
+    }
+
+    nav {
+      background-color: #17202A;
+    }
+
+    pre {
+      background-color: #282C34;
+      overflow-x: auto;
+      color: white;
+    }
+    .code-container,
+    .output-container {
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .output-container {
+      background-color: #282C34;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resizable {
+      resize: horizontal;
+      overflow: auto;
+      max-width: 100%;
+    }
+
+    .control-panel {
+      margin-bottom: 1rem;
+    }
+
+    .preview {
+      height: 90vh;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item dropdown" style="background-color: transparent;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Semanas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: transparent;">
+            <a class="dropdown-item" href="#semana1" style="background-color: transparent; color: white;">Semana 1</a>
+            <a class="dropdown-item" href="#semana2" style="background-color: transparent; color: white;">Semana 2</a>
+            <a class="dropdown-item" href="#semana3" style="background-color: transparent; color: white;">Semana 3</a>
+            <a class="dropdown-item" href="#semana5" style="background-color: transparent; color: white;">Semana 5</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main role="main" class="container">
+    <div class="c" style="margin-top: 5%; margin-bottom: 5%;">
+      <h1 style="margin-top: 5%; margin-bottom: 5%;">LabWeb</h1>
+      <img width="100%" src="https://blog.openclassrooms.com/es/wp-content/uploads/sites/5/2017/09/AdobeStock_126016889apaisado.jpg" alt="">
+      <p class="lead">Los laboratorios prácticos del curso ISO93A-T 'Desarrollo de Aplicaciones Web' de la Facultad de
+        Ingeniería de Sistemas. Estos laboratorios están diseñados como guías prácticas para complementar la enseñanza
+        teórica del curso. En este entorno, los estudiantes tienen la oportunidad de aplicar directamente los conceptos
+        y técnicas aprendidas en clase a través de ejercicios prácticos.</p>
+    </div>
+    <section id="semana1">
+      <h2 style="font-size: 2.5rem;">Semana 1</h2>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 1</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>1. ¿Cuál es el generador emmet? para: </p>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 30vh;" src="./src/Enunciado1.1.jpg" alt="">
+        <h3 style="font-size: 1.5rem;">Generador</h3>
+        <pre><code>
+              &lt;header#header>div#menu>(li>a)*5&gt;
+            </code></pre>
+        <h3 style="font-size: 1.5rem;">Resultado</h3>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 30vh;" src="./src/Resultado1.1.png" alt="">
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 2</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>2. Escribir el generador emmet para el html semántico con ids del mismo nombre</p>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 30vh;" src="./src/Enunciado1.2.jpg" alt="">
+        <h3 style="font-size: 1.5rem;">Generador</h3>
+        <pre><code>
+              &lt;div>(header#header+nav#nav+(section#section>article#article)+aside#aside+footer#footer)&gt;
+            </code></pre>
+        <h3 style="font-size: 1.5rem;">Resultado</h3>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 30vh;" src="./src/Resultado1.2.png" alt="">
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 3</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>3. Escriba el generador emmet para crear una tabla de 4 columnas y 21 filas, la primera fila es un encabezado
+          con id, nombres, apellidos y dirección. El Id deberá ser numerado del 1 al 20. </p>
+        <h3 style="font-size: 1.5rem;">Generador</h3>
+        <pre><code>
+              &lt;table>(thead>tr>th{ID}+th{nombres}+th{apellidos}+th{dirección})+(tbody>tr*20>td{$}+td{Nombre}+td{Apellido}+td{Dirección})&gt;
+            </code></pre>
+        <h3 style="font-size: 1.5rem;">Resultado</h3>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 60vh;" src="./src/Resultado1.3.png" alt="">
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 4</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>4. Escriba el generador emmet para crear una tabla de 20 filas y 2 columnas, los id de cada fila deben
+          llamarse: fila1, fila2, fila3… y presentarse en forma descendente. </p>
+        <h3 style="font-size: 1.5rem;">Generador</h3>
+        <pre><code>
+              &lt;table>(thead>tr>th{ID}+th{columna1})+(tbody>tr*19>td{fila $@-}+td{celda})&gt;
+            </code></pre>
+        <h3 style="font-size: 1.5rem;">Resultado</h3>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 60vh;" src="./src/Resultado1.4.png" alt="">
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 5</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>5. ¿Cuál es el generador emmet? para: </p>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 60vh;" src="./src/Enunciado1.5.jpg" alt="">
+        <h3 style="font-size: 1.5rem;">Generador</h3>
+        <pre><code>
+              &lt;table.table>(thead>tr>th[scope="col"]{\#}+th[scope="col"]{First}+th[scope="col"]{Second}+th[scope="col"]{Third})+(tbody>tr*3>th[scope="row"]{$}+td{Mark}+td{Otto}+td{Jhonson})&gt;
+            </code></pre>
+        <h3 style="font-size: 1.5rem;">Resultado</h3>
+        <img style="margin-top: 2%; margin-bottom: 2%; height: 60vh;" src="./src/Resultado1.5.png" alt="">
+      </div>
+    </section>
+    <section id="semana2">
+      <h2 style="font-size: 2.5rem;">Semana 2</h2>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 1</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar botones interactivos similar a boostrap utilizando las clases btn success info etc.</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Columna para el código HTML -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;"">HTML</h2>
+              <pre><code id="html-code">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;en&quot;&gt;
+      &lt;head&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
+          &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+          &lt;title&gt;Botones BOOTSTRAP&lt;/title&gt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;botones.css&quot;&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-light&quot;&gt;Light&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot;&gt;Dark&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+                      </code></pre>
+            </div>
+
+            <!-- Columna para el código CSS -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;">CSS</h2>
+              <pre><code id="css-code">
+      .btn {
+          color: white;
+          border: 0px;
+          border-radius: 5px;
+          padding: 10px;
+          cursor: pointer;
+      }
+      .btn-primary {
+          background-color: rgb(0, 123, 255);
+      }
+      .btn-secondary {
+          background-color: rgb(89, 97, 104);
+      }
+      .btn-success {
+          background-color: rgb(31, 130, 54);
+      }
+      .btn-danger {
+          background-color: rgb(193, 34, 49);
+      }
+      .btn-warning {
+          color: black;
+          background-color: rgb(229, 172, 3);
+      }
+      .btn-info {
+          background-color: rgb(18, 131, 149);
+      }
+      .btn-light {
+          color: black;
+          background-color: rgb(230, 234, 237);
+      }
+      .btn-dark {
+          background-color: rgb(34, 39, 42);
+      }
+      .btn-link {
+          background-color: white;
+          color: rgb(0, 101, 209);
+      }
+      .btn:hover {
+          opacity: 0.8;
+      }
+      .btn-link:hover {
+          text-decoration: underline rgb(0, 101, 209); 
+      }
+                      </code></pre>
+            </div>
+
+            <!-- Columna para la vista previa -->
+            <div class="col-md-4 output-container">
+              <h2 style="font-size: 1rem;"">Vista Previa</h2>
+              <iframe class="preview" style="border: 0px;" srcdoc=" 
+                          &lt;!DOCTYPE html&gt;
+                          &lt;html lang=&quot;en&quot;&gt;
+                          &lt;head&gt;
+                              &lt;meta charset=&quot;UTF-8&quot;&gt;
+                              &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                              &lt;title&gt;Vista Previa&lt;/title&gt;
+                              &lt;style&gt;
+                                  .btn {
+                                      color: white;
+                                      border: 0px;
+                                      border-radius: 5px;
+                                      padding: 10px;
+                                      cursor: pointer;
+                                  }
+                                  .btn-primary {
+                                      background-color: rgb(0, 123, 255);
+                                  }
+                                  .btn-secondary {
+                                      background-color: rgb(89, 97, 104);
+                                  }
+                                  .btn-success {
+                                      background-color: rgb(31, 130, 54);
+                                  }
+                                  .btn-danger {
+                                      background-color: rgb(193, 34, 49);
+                                  }
+                                  .btn-warning {
+                                      color: black;
+                                      background-color: rgb(229, 172, 3);
+                                  }
+                                  .btn-info {
+                                      background-color: rgb(18, 131, 149);
+                                  }
+                                  .btn-light {
+                                      color: black;
+                                      background-color: rgb(230, 234, 237);
+                                  }
+                                  .btn-dark {
+                                      background-color: rgb(34, 39, 42);
+                                  }
+                                  .btn-link {
+                                      background-color: white;
+                                      color: rgb(0, 101, 209);
+                                  }
+                                  .btn:hover {
+                                      opacity: 0.8;
+                                  }
+                                  .btn-link:hover {
+                                      text-decoration: underline rgb(0, 101, 209); 
+                                  }
+                              &lt;/style&gt;
+                          &lt;/head&gt;
+                          &lt;body&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-light&quot;&gt;Light&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot;&gt;Dark&lt;/button&gt;
+                              &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;
+                          &lt;/body&gt;
+                          &lt;/html&gt;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 2</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar botones interactivos para redes sociales utilizando clases (fa fa-facebook etc) y caracteres similar
+          a font-awesome. Utilizar iconos de: fontawesome</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Columna para el código HTML -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;"">HTML</h2>
+              <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                                &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+                                &lt;script src="https://kit.fontawesome.com/64f1b365fc.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+                                &lt;link rel="stylesheet" href="fontawesome.css"&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-youtube"&gt;
+                                    &lt;i class="fa-brands fa-youtube"&gt;&lt;/i&gt;
+                                    &lt;p&gt;Youtube&lt;/p&gt;
+                                &lt;/button&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-google"&gt;
+                                    &lt;i class="fa-brands fa-google"&gt;&lt;/i&gt;
+                                    &lt;p&gt;Google&lt;/p&gt;
+                                &lt;/button&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-facebook"&gt;
+                                    &lt;i class="fa-brands fa-facebook"&gt;&lt;/i&gt;
+                                    &lt;p&gt;Facebook&lt;/p&gt;
+                                &lt;/button&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-whatsapp"&gt;
+                                    &lt;i class="fa-brands fa-whatsapp"&gt;&lt;/i&gt;
+                                    &lt;p&gt;Whatsapp&lt;/p&gt;
+                                &lt;/button&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-github"&gt;
+                                    &lt;i class="fa-brands fa-github"&gt;&lt;/i&gt;
+                                    &lt;p&gt;GitHub&lt;/p&gt;
+                                &lt;/button&gt;
+                                &lt;button class="button-fa-brand button-fa-brand-instagram"&gt;
+                                    &lt;i class="fa-brands fa-instagram"&gt;&lt;/i&gt;
+                                    &lt;p&gt;Instagram&lt;/p&gt;
+                                &lt;/button&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                                </code></pre>
+            </div>
+            <!-- Columna para el código CSS -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;">CSS</h2>
+              <pre><code id="css-code">
+                        html{
+                          background-color: ghostwhite;
+                      }
+                      .button-fa-brand{
+                          display: inline-block;
+                          text-align: center;
+                          width: 10vw;
+                          height: 10vh;
+                          background-color: white;
+                          border: 0px;
+                          border-radius: 10px;
+                          box-shadow: 0 1dvh 0 rgb(150, 151, 151); /* Sombra inferior */
+                          line-height: 1;
+                      }
+                      .button-fa-brand:active{
+                          box-shadow: 0 0.5dvh 0 rgb(150, 151, 151); /* Sombra inferior */
+                      }
+                      .button-fa-brand p {
+                          margin: 0px;
+                          font-size: 0.8rem;
+                      }
+                      .button-fa-brand-youtube{
+                          background-color: #FF0000;
+                          color: white;
+                      }
+                      .button-fa-brand-youtube{
+                          background-color: #FF0000;
+                          color: white;
+                      }
+                      .button-fa-brand-google{
+                          background-image: linear-gradient(to right,#4285F4, #DB4437,#F4B400,#0F9D58);
+                          background-image:linear-gradient(to right, #4285F4 0%, #4285F4 25%, #DB4437 25%, #DB4437 50%, #F4B400 50%, #F4B400 75%, #0F9D58 75%, #0F9D58 100%);
+                          color: white;
+                      }
+                      .button-fa-brand-facebook{
+                          background-color: #4267B2;
+                          color: white;
+                      }
+                      .button-fa-brand-whatsapp{
+                          background-color: #25D350;
+                          color: white;
+                      }
+                      .button-fa-brand-github{
+                          background-color: black;
+                          color: white;
+                      }
+                      .button-fa-brand-instagram{
+                          background-image: linear-gradient(to bottom,#405DE6, #5B51D8, #825AB4, #C13584, #E1306C,#FD1D1D,#F56040);
+                          color: white;
+                      }
+                      </code></pre>
+            </div>
+
+            <!-- Columna para la vista previa -->
+            <div class="col-md-4 output-container">
+              <h2 style="font-size: 1rem;"">Vista Previa</h2>
+              <iframe class="preview" style="border: 0px;" srcdoc="
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;es&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+            &lt;title&gt;Vista Previa&lt;/title&gt;
+            &lt;style&gt;
+                html {
+                  background-color: #282C34;
+                }
+                .button-fa-brand {
+                    display: inline-block;
+                    text-align: center;
+                    width: 30vw;
+                    height: 10vh;
+                    background-color: white;
+                    border: 0px;
+                    border-radius: 10px;
+                    box-shadow: 0 1dvh 0 rgb(150, 151, 151); /* Sombra inferior */
+                    line-height: 1;
+                }
+                .button-fa-brand:active {
+                    box-shadow: 0 0.5dvh 0 rgb(150, 151, 151); /* Sombra inferior */
+                }
+                .button-fa-brand p {
+                    margin: 0px;
+                    font-size: 0.8rem;
+                }
+                .button-fa-brand-youtube {
+                    background-color: #FF0000;
+                    color: white;
+                }
+                .button-fa-brand-google {
+                    background-image: linear-gradient(to right,#4285F4, #DB4437,#F4B400,#0F9D58);
+                    background-image: linear-gradient(to right, #4285F4 0%, #4285F4 25%, #DB4437 25%, #DB4437 50%, #F4B400 50%, #F4B400 75%, #0F9D58 75%, #0F9D58 100%);
+                    color: white;
+                }
+                .button-fa-brand-facebook {
+                    background-color: #4267B2;
+                    color: white;
+                }
+                .button-fa-brand-whatsapp {
+                    background-color: #25D350;
+                    color: white;
+                }
+                .button-fa-brand-github {
+                    background-color: black;
+                    color: white;
+                }
+                .button-fa-brand-instagram {
+                    background-image: linear-gradient(to bottom,#405DE6, #5B51D8, #825AB4, #C13584, #E1306C,#FD1D1D,#F56040);
+                    color: white;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-youtube&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-youtube&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;Youtube&lt;/p&gt;
+            &lt;/button&gt;
+            &lt;br&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-google&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-google&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;Google&lt;/p&gt;
+            &lt;/button&gt;
+            &lt;br&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-facebook&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-facebook&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;Facebook&lt;/p&gt;
+            &lt;/button&gt;
+            &lt;br&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-whatsapp&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-whatsapp&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;Whatsapp&lt;/p&gt;
+            &lt;/button&gt;
+            &lt;br&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-github&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-github&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;GitHub&lt;/p&gt;
+            &lt;/button&gt;
+            &lt;br&gt;
+            &lt;button type=&quot;button&quot; class=&quot;button-fa-brand button-fa-brand-instagram&quot;&gt;
+                &lt;i class=&quot;fa-brands fa-instagram&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;Instagram&lt;/p&gt;
+            &lt;/button&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    "></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 3</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar un loader (animación de precarga) como un anillo que gira con animación infinita.</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Columna para el código HTML -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;"">HTML</h2>
+              <pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html lang="es"&gt;
+                &lt;head&gt;
+                  &lt;meta charset="UTF-8"&gt;
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                  &lt;title&gt;Pantalla de Carga&lt;/title&gt;
+                  &lt;link rel="stylesheet" href="loader.css"&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;div class="loader"&gt;&lt;/div&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+            </div>
+            <!-- Columna para el código CSS -->
+            <div class="col-md-4 code-container">
+              <h2 style="font-size: 1rem;">CSS</h2>
+              <pre><code id="css-code">
+                body {
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  background-color: #f0f0f0;
+                }
+                
+                .loader {
+                  border: 4px solid rgba(0, 0, 0, 0.1);
+                  border-top: 4px solid #13c6d3f8;
+                  border-radius: 50%;
+                  width: 150px;
+                  height: 150px;
+                  animation: spin 0.5s linear infinite; /* Animacion infinita */
+                }
+                
+                @keyframes spin {
+                  0% {
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    transform: rotate(360deg);
+                  }
+                }
+                      </code></pre>
+            </div>
+
+            <!-- Columna para la vista previa -->
+            <div class="col-md-4 output-container">
+              <h2 style="font-size: 1rem;"">Vista Previa</h2>
+              <iframe class="preview" style="border: 0px;" srcdoc="
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang='es'&gt;
+                &lt;head&gt;
+                  &lt;meta charset='UTF-8'&gt;
+                  &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
+                  &lt;title&gt;Pantalla de Carga&lt;/title&gt;
+                  &lt;link rel='stylesheet' href='loader.css'&gt;
+                  &lt;style&gt;
+                  body {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    background-color: #282C34;
+                  }
+                  
+                  .loader {
+                    border: 4px solid rgba(0, 0, 0, 0.1);
+                    border-top: 4px solid #13c6d3f8;
+                    border-radius: 50%;
+                    width: 150px;
+                    height: 150px;
+                    animation: spin 0.5s linear infinite; /* Animacion infinita */
+                  }
+                  
+                  @keyframes spin {
+                    0% {
+                      transform: rotate(0deg);
+                    }
+                    100% {
+                      transform: rotate(360deg);
+                    }
+                  }
+                  &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;div class='loader'&gt;&lt;/div&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+    "></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 4</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar La estructua de página responsiva.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado2.4.png">
+          <div class="card-body">
+            <a href="Semana02/Pagina Responsive/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 5</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: claro y oscuro. Agregar un botón para cambiar el modo.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado2.5.png">
+          <div class="card-body">
+            <a href="Semana02/Modo/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 6</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una página web sólo usando html y CSS que contenga un sidebar con 2 modos de visualización: contraido y expandidos. Agregar un botón para cambiar el modo.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado2.6.png">
+          <div class="card-body">
+            <a href="Semana02/Contraido/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="semana3">
+      <h2 style="font-size: 2.5rem;">Semana 3</h2>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 1</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar una pagina web responsive con Bootstrap que contenga una fila y 12 columnas para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+          &lt;html lang="en"&gt;
+          &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Ejercicio 01&lt;/title&gt;
+            &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;div class="container"&gt;
+              &lt;div class="row row-cols-xl-12 row-cols-lg-6 row-cols-md-4 row-cols-sm-3"&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-primary text-white"&gt;1&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-secondary text-white"&gt;2&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-success text-white"&gt;3&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-danger text-white"&gt;4&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-warning text-dark"&gt;5&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-info text-dark"&gt;6&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-primary text-white"&gt;7&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-secondary text-white"&gt;8&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-success text-white"&gt;9&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-danger text-white"&gt;10&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-warning text-dark"&gt;11&lt;/div&gt;
+                &lt;div class="col-12 col-xl-1 col-lg-2 col-md-4 col-sm-3 bg-info text-dark"&gt;12&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+          </code></pre>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 2</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar el ejercicio 3.1 con Tailwind</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+          &lt;html lang="en"&gt;
+          &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Ejercicio 02&lt;/title&gt;
+            &lt;link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;div class="container"&gt;
+              &lt;div class="grid xl:grid-cols-12 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3"&gt;
+                &lt;div class="bg-indigo-100"&gt;1&lt;/div&gt;
+                &lt;div class="bg-indigo-200"&gt;2&lt;/div&gt;
+                &lt;div class="bg-indigo-300"&gt;3&lt;/div&gt;
+                &lt;div class="bg-indigo-400"&gt;4&lt;/div&gt;
+                &lt;div class="bg-indigo-500"&gt;5&lt;/div&gt;
+                &lt;div class="bg-indigo-600"&gt;6&lt;/div&gt;
+                &lt;div class="bg-indigo-100"&gt;7&lt;/div&gt;
+                &lt;div class="bg-indigo-200"&gt;8&lt;/div&gt;
+                &lt;div class="bg-indigo-300"&gt;9&lt;/div&gt;
+                &lt;div class="bg-indigo-400"&gt;10&lt;/div&gt;
+                &lt;div class="bg-indigo-500"&gt;11&lt;/div&gt;
+                &lt;div class="bg-indigo-600"&gt;12&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+          </code></pre>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 3</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar el ejercicio 3.1 con CSS puro</p>
+        <h3 style="font-size: 1.5rem;">Código</h3>
+        <h3 style="font-size: 1rem;">HTML</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+          &lt;html lang="en"&gt;
+          &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Ejercicio 03&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;div class="container"&gt;
+              &lt;div class="row"&gt;
+                &lt;div class="color-1 col col-sm col-md col-lg col-xl col-xxl color-red"&gt;1&lt;/div&gt;
+                &lt;div class="color-2 col col-sm col-md col-lg col-xl col-xxl color-blue"&gt;2&lt;/div&gt;
+                &lt;div class="color-3 col col-sm col-md col-lg col-xl col-xxl color-yellow"&gt;3&lt;/div&gt;
+                &lt;div class="color-4 col col-sm col-md col-lg col-xl col-xxl color-green"&gt;4&lt;/div&gt;
+                &lt;div class="color-5 col col-sm col-md col-lg col-xl col-xxl color-pink"&gt;5&lt;/div&gt;
+                &lt;div class="color-6 col col-sm col-md col-lg col-xl col-xxl color-orange"&gt;6&lt;/div&gt;
+                &lt;div class="color-1 col col-sm col-md col-lg col-xl col-xxl color-orange"&gt;7&lt;/div&gt;
+                &lt;div class="color-2 col col-sm col-md col-lg col-xl col-xxl color-pink"&gt;8&lt;/div&gt;
+                &lt;div class="color-3 col col-sm col-md col-lg col-xl col-xxl color-green"&gt;9&lt;/div&gt;
+                &lt;div class="color-4 col col-sm col-md col-lg col-xl col-xxl color-yellow"&gt;10&lt;/div&gt;
+                &lt;div class="color-5 col col-sm col-md col-lg col-xl col-xxl color-blue"&gt;11&lt;/div&gt;
+                &lt;div class="color-6 col col-sm col-md col-lg col-xl col-xxl color-red"&gt;12&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+          </code></pre>
+          <h3 style="font-size: 1rem;">CSS</h3>
+          <pre><code>.container {
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+          }
+          .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+          .col {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+          }
+          .color-red {
+            background-color: red;
+          }
+          .color-blue {
+            background-color: blue;
+          }
+          .color-yellow {
+            background-color: yellow;
+          }
+          .color-green {
+            background-color: green;
+          }
+          .color-pink {
+            background-color: pink;
+          }
+          .color-orange {
+            background-color: orange;
+          }
+          @media (min-width: 576px) {
+            .col-sm {
+              flex: 0 0 auto;
+              width: 25%;
+            }
+          }
+          @media (min-width: 768px) {
+            .col-md {
+              flex: 0 0 auto;
+              width: 21%;
+            }
+          }
+          @media (min-width: 992px) {
+            .col-lg {
+              width: 13%;
+            }
+          }
+          @media (min-width: 1200px) {
+            .col-xl {
+              flex: 0 0 auto;
+              width: 5%;
+            }
+          }
+          @media (min-width: 1400px) {
+            .col-xxl {
+              flex: 0 0 auto;
+              width: 5%;
+            }
+          }
+          </code></pre>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 4</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar una pagina web responsive con Bootstrap que contenga un diseño según la <a href="https://www.eplantillasweb.com/live/#tmpl_id=61389&url_preview=https://ld-wt73.template-help.com/wt_prod-28727/">plantilla Bootstrap</a>. Las características de la página deberá tener el mismo contenido texto e imagenes. Así también la misma distribución, colores, diseño, animación para pantallas sm, md, lg, xl y xxl. Segun la siguiente figura.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado3.4.png">
+          <div class="card-body">
+            <a href="Semana03/PLANTILLA/BOOTSTRAP.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 5</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar el ejercicio 3.4 con Tailwind.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado3.5.png">
+          <div class="card-body">
+            <a href="Semana03/PLANTILLA/TAILWIND.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 6</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar el ejercicio 3.4 con Tailwind.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado3.6.png">
+          <div class="card-body">
+            <a href="Semana03/PLANTILLA/HTML.html">Ver</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="semana5">
+      <h2 style="font-size: 2.5rem;">Semana 5</h2>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 1</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Diseñar una pagina web para manipular el DOM con un botón.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado5.1.png">
+          <div class="card-body">
+            <a href="Semana05/Ejercicio01/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 2</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una aplicación para manipular el DOM con addEventListener, mostrando la reactividad de Javascript mediante un input text y un parrafo.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado5.2.png">
+          <div class="card-body">
+            <a href="Semana05/Ejercicio02/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 3</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una aplicación para obtener y manipular datos del DOM, mostrando un formulario con 2 input text para el ingreso de numeros y mostrar el resultado de la suma.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado5.3.png">
+          <div class="card-body">
+            <a href="Semana05/Ejercicio03/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 4</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una aplicación que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado5.4.png">
+          <div class="card-body">
+            <a href="Semana05/Ejercicio04/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 2rem;">Ejercicio 5</h3>
+        <h3 style="font-size: 1.5rem;">Enunciado</h3>
+        <p>Desarrollar una aplicación orientado a objetos que muestre una tabla con 10 datos de estudiantes id, apellidos, nombres, direccion y telefono. Crear un array con 10 objetos y manipular los datos del DOM para mostrar los datos del array.</p>
+        <h3 style="font-size: 1.5rem;">Pagína</h3>
+        <div class="card mb-3">
+          <img class="card-img-top" src="src/Resultado5.5.png">
+          <div class="card-body">
+            <a href="Semana05/Ejercicio05/index.html">Ver</a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">© 2024 Tutoriales de Programación</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
